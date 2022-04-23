@@ -3,7 +3,8 @@
 /* цвет акцент #2196F3 */
 /* цвет бекграунд #2F303A */
 
-/* Стили для html */
+/* ---------------------Стили для html--------------------- */
+
 :root {
   --primary-text-color: #757575;
   --secondary-text-color: #212121;
@@ -52,13 +53,14 @@ img {
   margin: -1px;
 }
 
-/* header */
+/* ---------------------header--------------------- */
 
 .header {
   border-bottom: 1px solid #ececec;
 }
 
-/* main-nav */
+/* ---------------------main-nav--------------------- */
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -81,7 +83,9 @@ img {
 .colorstudio-second {
   color: #fff;
 }
-/* site-nav */
+
+/* ---------------------site-nav--------------------- */
+
 .site-nav a {
   color: var(--secondary-text-color);
   font-weight: 500;
@@ -93,7 +97,22 @@ img {
 .site-nav a.current {
   color: var(--accent-color);
 }
-
+.current {
+  position: relative;
+}
+.current::after {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  background: #2196f3;
+  border-radius: 2px;
+}
 .site-nav a:hover,
 .site-nav a:focus,
 .contact-footer a:hover,
@@ -116,7 +135,9 @@ img {
 .nav-item:not(:last-child) {
   margin-right: 50px;
 }
-/* contact */
+
+/* ---------------------contact--------------------- */
+
 .contact {
   display: flex;
   margin-left: auto;
@@ -153,7 +174,9 @@ img {
 .tell-icon:focus {
   fill: var(--accent-color);
 }
-/* hero */
+
+/* ---------------------hero--------------------- */
+
 .hero {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/Imghero1.jpg);
@@ -180,7 +203,7 @@ img {
   margin-right: auto;
 }
 
-/* advantages */
+/* ---------------------advantages--------------------- */
 
 .advantages-title {
   color: var(--secondary-text-color);
@@ -223,7 +246,8 @@ img {
   background: #f5f4fa;
   border-radius: 4px;
 }
-/* works */
+
+/* ---------------------works--------------------- */
 
 .works {
   padding-top: 0;
@@ -249,8 +273,31 @@ img {
 .works-item:not(:last-child) {
   margin-right: 30px;
 }
+.works-item {
+  position: relative;
+}
+.works-thumbs {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+.works-text {
+  margin: 0;
 
-/* team */
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+/* ---------------------team--------------------- */
 
 .team-name {
   font-weight: 500;
@@ -334,10 +381,7 @@ img {
   height: 20px;
   fill: currentColor;
 }
-/* .team-icon:hover,
-.team-icon:focus {
-  fill: #ffffff;
-} */
+
 .team-item-icon {
   width: 44px;
   height: 44px;
@@ -345,7 +389,9 @@ img {
 .team-item-icon:not(:last-child) {
   margin-right: 10px;
 }
-/* Clients */
+
+/* ---------------------Clients--------------------- */
+
 .clients-title {
   font-weight: 700;
   font-size: 36px;
@@ -384,7 +430,9 @@ img {
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
 }
-/* footer */
+
+/* ---------------------footer--------------------- */
+
 .footer {
   background-color: var(--background-color);
   padding-top: 60px;
@@ -419,7 +467,7 @@ img {
   align-items: baseline;
 }
 
-/* connect */
+/* ---------------------connect--------------------- */
 
 .connect {
   margin-left: 70px;
@@ -473,7 +521,8 @@ img {
 .connect-item-icon:not(:last-child) {
   margin-right: 10px;
 }
-/* hero-button */
+
+/* ---------------------hero-button--------------------- */
 
 .hero-button {
   color: #fff;
@@ -493,9 +542,10 @@ img {
   background-color: #188ce8;
 }
 
-/* Portfolio */
+/* ---------------------Portfolio--------------------- */
 
-/* filter */
+/* ---------------------filter--------------------- */
+
 .filter-list {
   display: flex;
   justify-content: center;
@@ -530,7 +580,8 @@ img {
   line-height: 1.9;
   color: var(--primary-text-color);
 }
-/* button-filter */
+
+/* ---------------------button-filter--------------------- */
 
 .button-filter {
   background-color: #f5f4fa;
@@ -550,7 +601,8 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-/* projects */
+
+/* ---------------------projects--------------------- */
 
 .projects-list {
   display: flex;
@@ -586,4 +638,45 @@ img {
   border-bottom: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   padding: 20px 24px;
+}
+
+/* ---------------------modal--------------------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.button-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border: none;
+  background-color: #ffffff;
+  padding: 0;
+}
+.button-icon {
+  width: 30px;
+  height: 30px;
 }
